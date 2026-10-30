@@ -329,3 +329,4 @@ PostGIS contributors) under [CC BY-SA 3.0 US](http://creativecommons.org/license
 **not** Apache-2.0 -- any reuse of those specific files must keep that attribution and license,
 independent of the rest of this register. Each image's own `description.md` ("Illustration"
 section) carries the same attribution next to it.
+
