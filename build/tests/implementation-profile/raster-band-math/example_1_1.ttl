@@ -7,10 +7,10 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math> a skos:Concept ;
-    dcterms:source [ dcterms:references <https://www.ogc.org/standards/wcps/> ;
-            dcterms:title "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard" ],
-        [ dcterms:references <https://www.orfeo-toolbox.org/CookBook/Applications/app_BandMath.html> ;
-            dcterms:title "OTB BandMath -- Outputs a monoband image from a mathematical operation on several multi-band images" ] ;
+    dcterms:source [ dcterms:references <https://www.orfeo-toolbox.org/CookBook/Applications/app_BandMath.html> ;
+            dcterms:title "OTB BandMath -- Outputs a monoband image from a mathematical operation on several multi-band images" ],
+        [ dcterms:references <https://www.ogc.org/standards/wcps/> ;
+            dcterms:title "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard" ] ;
     skos:definition "Evaluates a user-supplied mathematical expression per pixel across one or more input rasters, producing a monoband output raster." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Raster band math" ;

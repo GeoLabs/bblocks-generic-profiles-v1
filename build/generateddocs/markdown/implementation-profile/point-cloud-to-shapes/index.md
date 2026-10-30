@@ -131,7 +131,7 @@ the ZOO-Project Geonovum testbed.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/point-cloud-to-shapes/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/implementation-profile/point-cloud-to-shapes/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes",
   "type": "ImplementationProfile",
   "prefLabel": "Point cloud to shapes",
@@ -220,9 +220,9 @@ the ZOO-Project Geonovum testbed.
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
+@prefix ns2: <https://w3id.org/ogc/api/schema/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
@@ -234,8 +234,8 @@ the ZOO-Project Geonovum testbed.
     skos:definition "Converts a point cloud to a SAGA shapes layer of points, i.e. a feature collection." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Point cloud to shapes" ;
-    gp:inputs [ ns2:points <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/inputs/points> ] ;
-    gp:outputs [ ns3:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/outputs/result> ] ;
+    gp:inputs [ ns3:points <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/inputs/points> ] ;
+    gp:outputs [ ns1:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/outputs/result> ] ;
     gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features> ;
     gp:status "submitted" ;
     proc:keywords "Point Cloud to Shapes",
@@ -243,12 +243,12 @@ the ZOO-Project Geonovum testbed.
         "feature collection",
         "point cloud",
         "pointcloud_tools" ;
-    proc:metadata [ dcterms:title "Generic Profile: Point cloud to features" ;
-            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features> ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ],
-        [ dcterms:title "Process Concept: Point Cloud Processing" ;
+    proc:metadata [ dcterms:title "Process Concept: Point Cloud Processing" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing> ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] .
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ],
+        [ dcterms:title "Generic Profile: Point cloud to features" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features> ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/inputs/points> dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point-cloud> ;
     proc:keywords "LAS",
@@ -256,10 +256,10 @@ the ZOO-Project Geonovum testbed.
     proc:metadata [ dcterms:title "Generic Profile: Point cloud to features -- input `points`" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features/inputs/points> ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
-    proc:schema [ a ns1:string ;
-            ns1:contentEncoding "base64" ;
-            ns1:contentMediaType "application/vnd.las" ;
-            ns1:description "LAS (OGC 17-030r1); application/vnd.las is the IANA-registered media type" ] .
+    proc:schema [ a ns2:string ;
+            ns2:contentEncoding "base64" ;
+            ns2:contentMediaType "application/vnd.las" ;
+            ns2:description "LAS (OGC 17-030r1); application/vnd.las is the IANA-registered media type" ] .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/outputs/result> dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/feature-collection> ;
     proc:keywords "GML",
@@ -267,9 +267,9 @@ the ZOO-Project Geonovum testbed.
     proc:metadata [ dcterms:title "Generic Profile: Point cloud to features -- output `result`" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features/outputs/result> ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] ;
-    proc:schema [ a ns1:string ;
-            ns1:contentMediaType "text/xml" ;
-            ns1:description "GML" ] .
+    proc:schema [ a ns2:string ;
+            ns2:contentMediaType "text/xml" ;
+            ns2:description "GML" ] .
 
 
 ```
@@ -281,7 +281,7 @@ $schema: https://json-schema.org/draft/2020-12/schema
 description: The Implementation Profile "Point cloud to shapes" -- see generic-profiles.implementation-profile
   for the general shape every Implementation Profile shares.
 allOf:
-- $ref: https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
+- $ref: https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/implementation-profile/schema.yaml
 - type: object
   properties:
     id:
@@ -434,13 +434,18 @@ x-jsonld-prefixes:
   gp: https://geolabs.github.io/bblocks-generic-profiles/def/
   proc: https://w3id.org/ogc/api/processes/
   dct: http://purl.org/dc/terms/
+x-bblocks-metadata:
+  itemIdentifier: generic-profiles.implementation-profile.point-cloud-to-shapes
+  register: https://geolabs.github.io/bblocks-generic-profiles-v1/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-10-30'
 
 ```
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/point-cloud-to-shapes/schema.json)
-* JSON version: [schema.json](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/point-cloud-to-shapes/schema.yaml)
+* YAML version: [schema.yaml](https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/implementation-profile/point-cloud-to-shapes/schema.json)
+* JSON version: [schema.json](https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/implementation-profile/point-cloud-to-shapes/schema.yaml)
 
 
 # JSON-LD Context
@@ -525,7 +530,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/point-cloud-to-shapes/context.jsonld)
+[context.jsonld](https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/implementation-profile/point-cloud-to-shapes/context.jsonld)
 
 ## Sources
 
@@ -536,6 +541,6 @@ You can find the full JSON-LD context here:
 
 The source code for this Building Block can be found in the following repository:
 
-* URL: [https://github.com/GeoLabs/bblocks-generic-profiles](https://github.com/GeoLabs/bblocks-generic-profiles)
+* URL: [https://github.com/GeoLabs/bblocks-generic-profiles-v1](https://github.com/GeoLabs/bblocks-generic-profiles-v1)
 * Path: `_sources/implementation-profile/point-cloud-to-shapes`
 

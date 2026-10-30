@@ -96,7 +96,7 @@ Implementation Profile -> Implementation (instance level).
 #### jsonld
 ```jsonld
 {
-  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/geometry-buffer/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/generic-profile/geometry-buffer/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-buffer",
   "type": "GenericProfile",
   "prefLabel": "Geometry buffer",
@@ -204,7 +204,7 @@ $schema: https://json-schema.org/draft/2020-12/schema
 description: The Generic Profile "Geometry buffer" -- see generic-profiles.generic-profile
   for the general shape every Generic Profile shares.
 allOf:
-- $ref: https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/schema.yaml
+- $ref: https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/generic-profile/schema.yaml
 - type: object
   properties:
     id:
@@ -297,13 +297,18 @@ x-jsonld-prefixes:
   gp: https://geolabs.github.io/bblocks-generic-profiles/def/
   proc: https://w3id.org/ogc/api/processes/
   dct: http://purl.org/dc/terms/
+x-bblocks-metadata:
+  itemIdentifier: generic-profiles.generic-profile.geometry-buffer
+  register: https://geolabs.github.io/bblocks-generic-profiles-v1/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-10-30'
 
 ```
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/geometry-buffer/schema.json)
-* JSON version: [schema.json](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/geometry-buffer/schema.yaml)
+* YAML version: [schema.yaml](https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/generic-profile/geometry-buffer/schema.json)
+* JSON version: [schema.json](https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/generic-profile/geometry-buffer/schema.yaml)
 
 
 # JSON-LD Context
@@ -380,7 +385,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/geometry-buffer/context.jsonld)
+[context.jsonld](https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/generic-profile/geometry-buffer/context.jsonld)
 
 ## Sources
 
@@ -390,6 +395,6 @@ You can find the full JSON-LD context here:
 
 The source code for this Building Block can be found in the following repository:
 
-* URL: [https://github.com/GeoLabs/bblocks-generic-profiles](https://github.com/GeoLabs/bblocks-generic-profiles)
+* URL: [https://github.com/GeoLabs/bblocks-generic-profiles-v1](https://github.com/GeoLabs/bblocks-generic-profiles-v1)
 * Path: `_sources/generic-profile/geometry-buffer`
 

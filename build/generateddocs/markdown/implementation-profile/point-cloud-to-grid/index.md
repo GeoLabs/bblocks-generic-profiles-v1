@@ -149,7 +149,7 @@ the ZOO-Project Geonovum testbed.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/point-cloud-to-grid/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/implementation-profile/point-cloud-to-grid/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid",
   "type": "ImplementationProfile",
   "prefLabel": "Point cloud to grid",
@@ -253,22 +253,22 @@ the ZOO-Project Geonovum testbed.
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
-@prefix ns2: <https://w3id.org/ogc/api/schema/> .
+@prefix ns1: <https://w3id.org/ogc/api/schema/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
 @prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid> a skos:Concept ;
-    dcterms:source [ dcterms:references <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/pointcloud_tools_4.html> ;
-            dcterms:title "SAGA 7.3.0 -- Point Cloud to Grid" ],
-        [ dcterms:references <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.pointcloud_tools.4> ;
-            dcterms:title "ZOO-Project Geonovum testbed -- SAGA.pointcloud_tools.4: Point Cloud to Grid" ] ;
+    dcterms:source [ dcterms:references <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.pointcloud_tools.4> ;
+            dcterms:title "ZOO-Project Geonovum testbed -- SAGA.pointcloud_tools.4: Point Cloud to Grid" ],
+        [ dcterms:references <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/pointcloud_tools_4.html> ;
+            dcterms:title "SAGA 7.3.0 -- Point Cloud to Grid" ] ;
     skos:definition "Writes one value per grid cell from the points falling in it -- by default the z value of the first point -- as a single-band raster." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Point cloud to grid" ;
-    gp:inputs [ ns1:cellSize <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid/inputs/cellSize> ;
-            ns1:points <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid/inputs/points> ] ;
+    gp:inputs [ ns2:cellSize <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid/inputs/cellSize> ;
+            ns2:points <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid/inputs/points> ] ;
     gp:outputs [ ns3:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid/outputs/result> ] ;
     gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization> ;
     gp:status "submitted" ;
@@ -296,10 +296,10 @@ the ZOO-Project Geonovum testbed.
     proc:metadata [ dcterms:title "Generic Profile: Point cloud rasterization -- input `points`" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization/inputs/points> ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
-    proc:schema [ a ns2:string ;
-            ns2:contentEncoding "base64" ;
-            ns2:contentMediaType "application/vnd.las" ;
-            ns2:description "LAS (OGC 17-030r1); application/vnd.las is the IANA-registered media type" ] .
+    proc:schema [ a ns1:string ;
+            ns1:contentEncoding "base64" ;
+            ns1:contentMediaType "application/vnd.las" ;
+            ns1:description "LAS (OGC 17-030r1); application/vnd.las is the IANA-registered media type" ] .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid/outputs/result> dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster-single-band> ;
     proc:keywords "GeoTIFF",
@@ -307,10 +307,10 @@ the ZOO-Project Geonovum testbed.
     proc:metadata [ dcterms:title "Generic Profile: Point cloud rasterization -- output `result`" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization/outputs/result> ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] ;
-    proc:schema [ a ns2:string ;
-            ns2:contentEncoding "base64" ;
-            ns2:contentMediaType "image/tiff" ;
-            ns2:description "GeoTIFF" ] .
+    proc:schema [ a ns1:string ;
+            ns1:contentEncoding "base64" ;
+            ns1:contentMediaType "image/tiff" ;
+            ns1:description "GeoTIFF" ] .
 
 
 ```
@@ -322,7 +322,7 @@ $schema: https://json-schema.org/draft/2020-12/schema
 description: The Implementation Profile "Point cloud to grid" -- see generic-profiles.implementation-profile
   for the general shape every Implementation Profile shares.
 allOf:
-- $ref: https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
+- $ref: https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/implementation-profile/schema.yaml
 - type: object
   properties:
     id:
@@ -508,13 +508,18 @@ x-jsonld-prefixes:
   gp: https://geolabs.github.io/bblocks-generic-profiles/def/
   proc: https://w3id.org/ogc/api/processes/
   dct: http://purl.org/dc/terms/
+x-bblocks-metadata:
+  itemIdentifier: generic-profiles.implementation-profile.point-cloud-to-grid
+  register: https://geolabs.github.io/bblocks-generic-profiles-v1/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-10-30'
 
 ```
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/point-cloud-to-grid/schema.json)
-* JSON version: [schema.json](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/point-cloud-to-grid/schema.yaml)
+* YAML version: [schema.yaml](https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/implementation-profile/point-cloud-to-grid/schema.json)
+* JSON version: [schema.json](https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/implementation-profile/point-cloud-to-grid/schema.yaml)
 
 
 # JSON-LD Context
@@ -599,7 +604,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/point-cloud-to-grid/context.jsonld)
+[context.jsonld](https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/implementation-profile/point-cloud-to-grid/context.jsonld)
 
 ## Sources
 
@@ -610,6 +615,6 @@ You can find the full JSON-LD context here:
 
 The source code for this Building Block can be found in the following repository:
 
-* URL: [https://github.com/GeoLabs/bblocks-generic-profiles](https://github.com/GeoLabs/bblocks-generic-profiles)
+* URL: [https://github.com/GeoLabs/bblocks-generic-profiles-v1](https://github.com/GeoLabs/bblocks-generic-profiles-v1)
 * Path: `_sources/implementation-profile/point-cloud-to-grid`
 

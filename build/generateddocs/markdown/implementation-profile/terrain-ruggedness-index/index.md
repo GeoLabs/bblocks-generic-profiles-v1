@@ -137,7 +137,7 @@ the ZOO-Project Geonovum testbed.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/terrain-ruggedness-index/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/implementation-profile/terrain-ruggedness-index/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/terrain-ruggedness-index",
   "type": "ImplementationProfile",
   "prefLabel": "Terrain ruggedness index",
@@ -232,22 +232,22 @@ the ZOO-Project Geonovum testbed.
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
 @prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/terrain-ruggedness-index> a skos:Concept ;
-    dcterms:source [ dcterms:references <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/ta_morphometry_16.html> ;
-            dcterms:title "SAGA 7.3.0 -- Terrain Ruggedness Index (TRI)" ],
-        [ dcterms:references <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.ta_morphometry.16> ;
+    dcterms:source [ dcterms:references <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.ta_morphometry.16> ;
             dcterms:title "ZOO-Project Geonovum testbed -- SAGA.ta_morphometry.16: Terrain Ruggedness Index (TRI)" ],
+        [ dcterms:references <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/ta_morphometry_16.html> ;
+            dcterms:title "SAGA 7.3.0 -- Terrain Ruggedness Index (TRI)" ],
         [ dcterms:title "Riley, S.J., De Gloria, S.D., Elliot, R. (1999): A Terrain Ruggedness that Quantifies Topographic Heterogeneity. Intermountain Journal of Science, Vol.5, No.1-4, pp.23-27" ] ;
     skos:definition "The terrain ruggedness index (TRI) of Riley et al. (1999): how much the elevation of each cell differs from that of its neighbourhood." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Terrain ruggedness index" ;
-    gp:inputs [ ns2:elevation <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/terrain-ruggedness-index/inputs/elevation> ] ;
-    gp:outputs [ ns3:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/terrain-ruggedness-index/outputs/result> ] ;
+    gp:inputs [ ns3:elevation <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/terrain-ruggedness-index/inputs/elevation> ] ;
+    gp:outputs [ ns2:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/terrain-ruggedness-index/outputs/result> ] ;
     gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative> ;
     gp:status "submitted" ;
     proc:keywords "TRI",
@@ -256,12 +256,12 @@ the ZOO-Project Geonovum testbed.
         "raster",
         "ta_morphometry",
         "terrain" ;
-    proc:metadata [ dcterms:title "Process Concept: Terrain Analysis" ;
-            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/terrain-analysis> ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ],
-        [ dcterms:title "Generic Profile: Terrain derivative" ;
+    proc:metadata [ dcterms:title "Generic Profile: Terrain derivative" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative> ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] .
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ],
+        [ dcterms:title "Process Concept: Terrain Analysis" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/terrain-analysis> ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/terrain-ruggedness-index/inputs/elevation> dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/elevation-model> ;
     proc:keywords "GeoTIFF",
@@ -295,7 +295,7 @@ $schema: https://json-schema.org/draft/2020-12/schema
 description: The Implementation Profile "Terrain ruggedness index" -- see generic-profiles.implementation-profile
   for the general shape every Implementation Profile shares.
 allOf:
-- $ref: https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
+- $ref: https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/implementation-profile/schema.yaml
 - type: object
   properties:
     id:
@@ -450,13 +450,18 @@ x-jsonld-prefixes:
   gp: https://geolabs.github.io/bblocks-generic-profiles/def/
   proc: https://w3id.org/ogc/api/processes/
   dct: http://purl.org/dc/terms/
+x-bblocks-metadata:
+  itemIdentifier: generic-profiles.implementation-profile.terrain-ruggedness-index
+  register: https://geolabs.github.io/bblocks-generic-profiles-v1/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-10-30'
 
 ```
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/terrain-ruggedness-index/schema.json)
-* JSON version: [schema.json](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/terrain-ruggedness-index/schema.yaml)
+* YAML version: [schema.yaml](https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/implementation-profile/terrain-ruggedness-index/schema.json)
+* JSON version: [schema.json](https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/implementation-profile/terrain-ruggedness-index/schema.yaml)
 
 
 # JSON-LD Context
@@ -541,7 +546,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/terrain-ruggedness-index/context.jsonld)
+[context.jsonld](https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/implementation-profile/terrain-ruggedness-index/context.jsonld)
 
 ## Sources
 
@@ -553,6 +558,6 @@ You can find the full JSON-LD context here:
 
 The source code for this Building Block can be found in the following repository:
 
-* URL: [https://github.com/GeoLabs/bblocks-generic-profiles](https://github.com/GeoLabs/bblocks-generic-profiles)
+* URL: [https://github.com/GeoLabs/bblocks-generic-profiles-v1](https://github.com/GeoLabs/bblocks-generic-profiles-v1)
 * Path: `_sources/implementation-profile/terrain-ruggedness-index`
 

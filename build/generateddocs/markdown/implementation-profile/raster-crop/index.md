@@ -186,7 +186,7 @@ the ZOO-Project Geonovum testbed
 #### jsonld
 ```jsonld
 {
-  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-crop/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/implementation-profile/raster-crop/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-crop",
   "type": "ImplementationProfile",
   "prefLabel": "Raster crop",
@@ -297,25 +297,25 @@ the ZOO-Project Geonovum testbed
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
 @prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
-@prefix ns3: <https://w3id.org/ogc/api/schema/$> .
-@prefix ns4: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
+@prefix ns4: <https://w3id.org/ogc/api/schema/$> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-crop> a skos:Concept ;
-    dcterms:source [ dcterms:references <https://geolabs.github.io/bblocks-ogcapi-processes/> ;
-            dcterms:title "ogc.api.processes.v1.schemas.bbox -- bbox schema (OGC API - Processes - Part 1: Core)" ],
+    dcterms:source [ dcterms:references <https://www.orfeo-toolbox.org/CookBook/Applications/app_ExtractROI.html> ;
+            dcterms:title "OTB ExtractROI -- Extracts a region of interest defined by the user" ],
         [ dcterms:references <https://www.ogc.org/standards/wcps/> ;
             dcterms:title "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard" ],
-        [ dcterms:references <https://www.orfeo-toolbox.org/CookBook/Applications/app_ExtractROI.html> ;
-            dcterms:title "OTB ExtractROI -- Extracts a region of interest defined by the user" ] ;
+        [ dcterms:references <https://geolabs.github.io/bblocks-ogcapi-processes/> ;
+            dcterms:title "ogc.api.processes.v1.schemas.bbox -- bbox schema (OGC API - Processes - Part 1: Core)" ] ;
     skos:definition "Extracts the pixels of a raster coverage that fall within a region of interest." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Raster crop" ;
-    gp:inputs [ ns2:areaOfInterest <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-crop/inputs/areaOfInterest> ;
-            ns2:raster <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-crop/inputs/raster> ] ;
-    gp:outputs [ ns4:raster <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-crop/outputs/raster> ] ;
+    gp:inputs [ ns3:areaOfInterest <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-crop/inputs/areaOfInterest> ;
+            ns3:raster <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-crop/inputs/raster> ] ;
+    gp:outputs [ ns2:raster <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-crop/outputs/raster> ] ;
     gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop> ;
     gp:status "submitted" ;
     proc:keywords "ExtractROI",
@@ -336,7 +336,7 @@ the ZOO-Project Geonovum testbed
     proc:metadata [ dcterms:title "Generic Profile: Raster crop -- input `areaOfInterest`" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/inputs/areaOfInterest> ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
-    proc:schema [ ns3:ref "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/bbox/schema.json" ] .
+    proc:schema [ ns4:ref "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/bbox/schema.json" ] .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-crop/inputs/raster> dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster> ;
     proc:keywords "GeoTIFF",
@@ -368,7 +368,7 @@ $schema: https://json-schema.org/draft/2020-12/schema
 description: The Implementation Profile "Raster crop" -- see generic-profiles.implementation-profile
   for the general shape every Implementation Profile shares.
 allOf:
-- $ref: https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
+- $ref: https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/implementation-profile/schema.yaml
 - type: object
   properties:
     id:
@@ -554,13 +554,18 @@ x-jsonld-prefixes:
   gp: https://geolabs.github.io/bblocks-generic-profiles/def/
   proc: https://w3id.org/ogc/api/processes/
   dct: http://purl.org/dc/terms/
+x-bblocks-metadata:
+  itemIdentifier: generic-profiles.implementation-profile.raster-crop
+  register: https://geolabs.github.io/bblocks-generic-profiles-v1/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-10-30'
 
 ```
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-crop/schema.json)
-* JSON version: [schema.json](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-crop/schema.yaml)
+* YAML version: [schema.yaml](https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/implementation-profile/raster-crop/schema.json)
+* JSON version: [schema.json](https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/implementation-profile/raster-crop/schema.yaml)
 
 
 # JSON-LD Context
@@ -645,7 +650,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-crop/context.jsonld)
+[context.jsonld](https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/implementation-profile/raster-crop/context.jsonld)
 
 ## Sources
 
@@ -658,6 +663,6 @@ You can find the full JSON-LD context here:
 
 The source code for this Building Block can be found in the following repository:
 
-* URL: [https://github.com/GeoLabs/bblocks-generic-profiles](https://github.com/GeoLabs/bblocks-generic-profiles)
+* URL: [https://github.com/GeoLabs/bblocks-generic-profiles-v1](https://github.com/GeoLabs/bblocks-generic-profiles-v1)
 * Path: `_sources/implementation-profile/raster-crop`
 

@@ -146,7 +146,7 @@ the ZOO-Project Geonovum testbed.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/point-cloud-thinning/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/implementation-profile/point-cloud-thinning/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-thinning",
   "type": "ImplementationProfile",
   "prefLabel": "Point cloud thinning (simple)",
@@ -249,22 +249,22 @@ the ZOO-Project Geonovum testbed.
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
+@prefix ns2: <https://w3id.org/ogc/api/schema/> .
 @prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-thinning> a skos:Concept ;
-    dcterms:source [ dcterms:references <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.pointcloud_tools.9> ;
-            dcterms:title "ZOO-Project Geonovum testbed -- SAGA.pointcloud_tools.9: Point Cloud Thinning (Simple)" ],
-        [ dcterms:references <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/pointcloud_tools_9.html> ;
-            dcterms:title "SAGA 7.3.0 -- Point Cloud Thinning (Simple)" ] ;
+    dcterms:source [ dcterms:references <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/pointcloud_tools_9.html> ;
+            dcterms:title "SAGA 7.3.0 -- Point Cloud Thinning (Simple)" ],
+        [ dcterms:references <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.pointcloud_tools.9> ;
+            dcterms:title "ZOO-Project Geonovum testbed -- SAGA.pointcloud_tools.9: Point Cloud Thinning (Simple)" ] ;
     skos:definition "Reduces the number of points to the given percentage by sequential point removal, which suits points stored in chronological order best." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Point cloud thinning (simple)" ;
-    gp:inputs [ ns2:percentage <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-thinning/inputs/percentage> ;
-            ns2:points <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-thinning/inputs/points> ] ;
+    gp:inputs [ ns1:percentage <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-thinning/inputs/percentage> ;
+            ns1:points <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-thinning/inputs/points> ] ;
     gp:outputs [ ns3:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-thinning/outputs/result> ] ;
     gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning> ;
     gp:status "submitted" ;
@@ -291,10 +291,10 @@ the ZOO-Project Geonovum testbed.
     proc:metadata [ dcterms:title "Generic Profile: Point cloud thinning -- input `points`" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/inputs/points> ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
-    proc:schema [ a ns1:string ;
-            ns1:contentEncoding "base64" ;
-            ns1:contentMediaType "application/vnd.las" ;
-            ns1:description "LAS (OGC 17-030r1); application/vnd.las is the IANA-registered media type" ] .
+    proc:schema [ a ns2:string ;
+            ns2:contentEncoding "base64" ;
+            ns2:contentMediaType "application/vnd.las" ;
+            ns2:description "LAS (OGC 17-030r1); application/vnd.las is the IANA-registered media type" ] .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-thinning/outputs/result> dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point-cloud> ;
     proc:keywords "LAS",
@@ -302,10 +302,10 @@ the ZOO-Project Geonovum testbed.
     proc:metadata [ dcterms:title "Generic Profile: Point cloud thinning -- output `result`" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/outputs/result> ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] ;
-    proc:schema [ a ns1:string ;
-            ns1:contentEncoding "base64" ;
-            ns1:contentMediaType "application/vnd.las" ;
-            ns1:description "LAS (OGC 17-030r1); application/vnd.las is the IANA-registered media type" ] .
+    proc:schema [ a ns2:string ;
+            ns2:contentEncoding "base64" ;
+            ns2:contentMediaType "application/vnd.las" ;
+            ns2:description "LAS (OGC 17-030r1); application/vnd.las is the IANA-registered media type" ] .
 
 
 ```
@@ -317,7 +317,7 @@ $schema: https://json-schema.org/draft/2020-12/schema
 description: The Implementation Profile "Point cloud thinning (simple)" -- see generic-profiles.implementation-profile
   for the general shape every Implementation Profile shares.
 allOf:
-- $ref: https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
+- $ref: https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/implementation-profile/schema.yaml
 - type: object
   properties:
     id:
@@ -501,13 +501,18 @@ x-jsonld-prefixes:
   gp: https://geolabs.github.io/bblocks-generic-profiles/def/
   proc: https://w3id.org/ogc/api/processes/
   dct: http://purl.org/dc/terms/
+x-bblocks-metadata:
+  itemIdentifier: generic-profiles.implementation-profile.point-cloud-thinning
+  register: https://geolabs.github.io/bblocks-generic-profiles-v1/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-10-30'
 
 ```
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/point-cloud-thinning/schema.json)
-* JSON version: [schema.json](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/point-cloud-thinning/schema.yaml)
+* YAML version: [schema.yaml](https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/implementation-profile/point-cloud-thinning/schema.json)
+* JSON version: [schema.json](https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/implementation-profile/point-cloud-thinning/schema.yaml)
 
 
 # JSON-LD Context
@@ -592,7 +597,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/point-cloud-thinning/context.jsonld)
+[context.jsonld](https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/implementation-profile/point-cloud-thinning/context.jsonld)
 
 ## Sources
 
@@ -603,6 +608,6 @@ You can find the full JSON-LD context here:
 
 The source code for this Building Block can be found in the following repository:
 
-* URL: [https://github.com/GeoLabs/bblocks-generic-profiles](https://github.com/GeoLabs/bblocks-generic-profiles)
+* URL: [https://github.com/GeoLabs/bblocks-generic-profiles-v1](https://github.com/GeoLabs/bblocks-generic-profiles-v1)
 * Path: `_sources/implementation-profile/point-cloud-thinning`
 

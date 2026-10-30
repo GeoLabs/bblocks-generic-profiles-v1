@@ -99,7 +99,7 @@ Implementation Profile -> Implementation (instance level).
 #### jsonld
 ```jsonld
 {
-  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/radiometric-index/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/generic-profile/radiometric-index/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index",
   "type": "GenericProfile",
   "prefLabel": "Radiometric index",
@@ -161,8 +161,8 @@ Implementation Profile -> Implementation (instance level).
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
@@ -171,9 +171,9 @@ Implementation Profile -> Implementation (instance level).
     skos:definition "Computes one or more named radiometric indices (e.g. NDVI, NDWI, SAVI) from the relevant spectral bands of one or more input rasters. One or more Raster inputs, the name(s) of the index/indices to compute, one Raster output (one band per selected index)." ;
     skos:inScheme gp:generic-profile ;
     skos:prefLabel "Radiometric index" ;
-    gp:inputs [ ns1:index <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/index> ;
-            ns1:rasters <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/rasters> ] ;
-    gp:outputs [ ns2:raster <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/outputs/raster> ] ;
+    gp:inputs [ ns2:index <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/index> ;
+            ns2:rasters <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/rasters> ] ;
+    gp:outputs [ ns1:raster <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/outputs/raster> ] ;
     gp:status "submitted" ;
     proc:keywords "coverage",
         "radiometric index",
@@ -209,7 +209,7 @@ $schema: https://json-schema.org/draft/2020-12/schema
 description: The Generic Profile "Radiometric index" -- see generic-profiles.generic-profile
   for the general shape every Generic Profile shares.
 allOf:
-- $ref: https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/schema.yaml
+- $ref: https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/generic-profile/schema.yaml
 - type: object
   properties:
     id:
@@ -302,13 +302,18 @@ x-jsonld-prefixes:
   gp: https://geolabs.github.io/bblocks-generic-profiles/def/
   proc: https://w3id.org/ogc/api/processes/
   dct: http://purl.org/dc/terms/
+x-bblocks-metadata:
+  itemIdentifier: generic-profiles.generic-profile.radiometric-index
+  register: https://geolabs.github.io/bblocks-generic-profiles-v1/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-10-30'
 
 ```
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/radiometric-index/schema.json)
-* JSON version: [schema.json](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/radiometric-index/schema.yaml)
+* YAML version: [schema.yaml](https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/generic-profile/radiometric-index/schema.json)
+* JSON version: [schema.json](https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/generic-profile/radiometric-index/schema.yaml)
 
 
 # JSON-LD Context
@@ -385,7 +390,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/radiometric-index/context.jsonld)
+[context.jsonld](https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/generic-profile/radiometric-index/context.jsonld)
 
 ## Sources
 
@@ -395,6 +400,6 @@ You can find the full JSON-LD context here:
 
 The source code for this Building Block can be found in the following repository:
 
-* URL: [https://github.com/GeoLabs/bblocks-generic-profiles](https://github.com/GeoLabs/bblocks-generic-profiles)
+* URL: [https://github.com/GeoLabs/bblocks-generic-profiles-v1](https://github.com/GeoLabs/bblocks-generic-profiles-v1)
 * Path: `_sources/generic-profile/radiometric-index`
 

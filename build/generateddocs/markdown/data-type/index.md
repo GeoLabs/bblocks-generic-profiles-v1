@@ -277,7 +277,7 @@ point clouds, SAGA's tool libraries where no standard was found).
 #### jsonld
 ```jsonld
 {
-  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/data-type/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/data-type/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type",
   "type": "ConceptScheme",
   "prefLabel": "Data types",
@@ -724,13 +724,18 @@ x-jsonld-prefixes:
   skos: http://www.w3.org/2004/02/skos/core#
   dct: http://purl.org/dc/terms/
   gp: https://geolabs.github.io/bblocks-generic-profiles/def/
+x-bblocks-metadata:
+  itemIdentifier: generic-profiles.data-type
+  register: https://geolabs.github.io/bblocks-generic-profiles-v1/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-10-30'
 
 ```
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/data-type/schema.json)
-* JSON version: [schema.json](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/data-type/schema.yaml)
+* YAML version: [schema.yaml](https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/data-type/schema.json)
+* JSON version: [schema.json](https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/data-type/schema.yaml)
 
 
 # JSON-LD Context
@@ -773,7 +778,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/data-type/context.jsonld)
+[context.jsonld](https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/data-type/context.jsonld)
 
 ## Sources
 
@@ -785,6 +790,6 @@ You can find the full JSON-LD context here:
 
 The source code for this Building Block can be found in the following repository:
 
-* URL: [https://github.com/GeoLabs/bblocks-generic-profiles](https://github.com/GeoLabs/bblocks-generic-profiles)
+* URL: [https://github.com/GeoLabs/bblocks-generic-profiles-v1](https://github.com/GeoLabs/bblocks-generic-profiles-v1)
 * Path: `_sources/data-type`
 

@@ -205,7 +205,7 @@ this register: see `ospd.process-profiles.raster.band-math-multiband` in
 #### jsonld
 ```jsonld
 {
-  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-band-math-multiband/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/implementation-profile/raster-band-math-multiband/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband",
   "type": "ImplementationProfile",
   "prefLabel": "Raster band math (multi-band output)",
@@ -316,24 +316,24 @@ this register: see `ospd.process-profiles.raster.band-math-multiband` in
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
 @prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband> a skos:Concept ;
-    dcterms:source [ dcterms:references <https://www.ogc.org/standards/wcps/> ;
-            dcterms:title "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard" ],
-        [ dcterms:references <https://docs.ogc.org/is/09-146r8/09-146r8.html> ;
+    dcterms:source [ dcterms:references <https://docs.ogc.org/is/09-146r8/09-146r8.html> ;
             dcterms:title "OGC 09-146r8 Coverage Implementation Schema (CIS) 1.1.1, §6.5 RangeType" ],
         [ dcterms:references <https://www.orfeo-toolbox.org/CookBook/Applications/app_BandMathX.html> ;
-            dcterms:title "OTB BandMathX -- Performs mathematical operations on several multiband images, outputting a mono- or multi-band image" ] ;
+            dcterms:title "OTB BandMathX -- Performs mathematical operations on several multiband images, outputting a mono- or multi-band image" ],
+        [ dcterms:references <https://www.ogc.org/standards/wcps/> ;
+            dcterms:title "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard" ] ;
     skos:definition "Evaluates a user-supplied, possibly vector-valued mathematical expression per pixel across one or more input rasters, producing an output raster with one or more bands." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Raster band math (multi-band output)" ;
-    gp:inputs [ ns3:expression <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband/inputs/expression> ;
-            ns3:rasters <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband/inputs/rasters> ] ;
-    gp:outputs [ ns2:raster <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband/outputs/raster> ] ;
+    gp:inputs [ ns2:expression <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband/inputs/expression> ;
+            ns2:rasters <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband/inputs/rasters> ] ;
+    gp:outputs [ ns3:raster <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband/outputs/raster> ] ;
     gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math> ;
     gp:status "submitted" ;
     proc:keywords "BandMathX",
@@ -342,12 +342,12 @@ this register: see `ospd.process-profiles.raster.band-math-multiband` in
         "coverage",
         "multi-band",
         "raster" ;
-    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ;
-            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ],
-        [ dcterms:title "Generic Profile: Raster band math" ;
+    proc:metadata [ dcterms:title "Generic Profile: Raster band math" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math> ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] .
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ],
+        [ dcterms:title "Process Concept: Raster Coverage Processing" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband/inputs/expression> dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/string> ;
     proc:keywords "expression" ;
@@ -389,7 +389,7 @@ description: The Implementation Profile "Raster band math (multi-band output)" -
   see generic-profiles.implementation-profile for the general shape every Implementation
   Profile shares.
 allOf:
-- $ref: https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
+- $ref: https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/implementation-profile/schema.yaml
 - type: object
   properties:
     id:
@@ -575,13 +575,18 @@ x-jsonld-prefixes:
   gp: https://geolabs.github.io/bblocks-generic-profiles/def/
   proc: https://w3id.org/ogc/api/processes/
   dct: http://purl.org/dc/terms/
+x-bblocks-metadata:
+  itemIdentifier: generic-profiles.implementation-profile.raster-band-math-multiband
+  register: https://geolabs.github.io/bblocks-generic-profiles-v1/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-10-30'
 
 ```
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-band-math-multiband/schema.json)
-* JSON version: [schema.json](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-band-math-multiband/schema.yaml)
+* YAML version: [schema.yaml](https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/implementation-profile/raster-band-math-multiband/schema.json)
+* JSON version: [schema.json](https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/implementation-profile/raster-band-math-multiband/schema.yaml)
 
 
 # JSON-LD Context
@@ -666,7 +671,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-band-math-multiband/context.jsonld)
+[context.jsonld](https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/implementation-profile/raster-band-math-multiband/context.jsonld)
 
 ## Sources
 
@@ -678,6 +683,6 @@ You can find the full JSON-LD context here:
 
 The source code for this Building Block can be found in the following repository:
 
-* URL: [https://github.com/GeoLabs/bblocks-generic-profiles](https://github.com/GeoLabs/bblocks-generic-profiles)
+* URL: [https://github.com/GeoLabs/bblocks-generic-profiles-v1](https://github.com/GeoLabs/bblocks-generic-profiles-v1)
 * Path: `_sources/implementation-profile/raster-band-math-multiband`
 

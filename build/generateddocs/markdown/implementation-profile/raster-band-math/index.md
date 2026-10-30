@@ -173,7 +173,7 @@ the ZOO-Project Geonovum testbed
 #### jsonld
 ```jsonld
 {
-  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-band-math/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/implementation-profile/raster-band-math/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math",
   "type": "ImplementationProfile",
   "prefLabel": "Raster band math",
@@ -285,10 +285,10 @@ the ZOO-Project Geonovum testbed
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math> a skos:Concept ;
-    dcterms:source [ dcterms:references <https://www.ogc.org/standards/wcps/> ;
-            dcterms:title "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard" ],
-        [ dcterms:references <https://www.orfeo-toolbox.org/CookBook/Applications/app_BandMath.html> ;
-            dcterms:title "OTB BandMath -- Outputs a monoband image from a mathematical operation on several multi-band images" ] ;
+    dcterms:source [ dcterms:references <https://www.orfeo-toolbox.org/CookBook/Applications/app_BandMath.html> ;
+            dcterms:title "OTB BandMath -- Outputs a monoband image from a mathematical operation on several multi-band images" ],
+        [ dcterms:references <https://www.ogc.org/standards/wcps/> ;
+            dcterms:title "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard" ] ;
     skos:definition "Evaluates a user-supplied mathematical expression per pixel across one or more input rasters, producing a monoband output raster." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Raster band math" ;
@@ -348,7 +348,7 @@ $schema: https://json-schema.org/draft/2020-12/schema
 description: The Implementation Profile "Raster band math" -- see generic-profiles.implementation-profile
   for the general shape every Implementation Profile shares.
 allOf:
-- $ref: https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
+- $ref: https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/implementation-profile/schema.yaml
 - type: object
   properties:
     id:
@@ -534,13 +534,18 @@ x-jsonld-prefixes:
   gp: https://geolabs.github.io/bblocks-generic-profiles/def/
   proc: https://w3id.org/ogc/api/processes/
   dct: http://purl.org/dc/terms/
+x-bblocks-metadata:
+  itemIdentifier: generic-profiles.implementation-profile.raster-band-math
+  register: https://geolabs.github.io/bblocks-generic-profiles-v1/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-10-30'
 
 ```
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-band-math/schema.json)
-* JSON version: [schema.json](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-band-math/schema.yaml)
+* YAML version: [schema.yaml](https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/implementation-profile/raster-band-math/schema.json)
+* JSON version: [schema.json](https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/implementation-profile/raster-band-math/schema.yaml)
 
 
 # JSON-LD Context
@@ -625,7 +630,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-band-math/context.jsonld)
+[context.jsonld](https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/implementation-profile/raster-band-math/context.jsonld)
 
 ## Sources
 
@@ -636,6 +641,6 @@ You can find the full JSON-LD context here:
 
 The source code for this Building Block can be found in the following repository:
 
-* URL: [https://github.com/GeoLabs/bblocks-generic-profiles](https://github.com/GeoLabs/bblocks-generic-profiles)
+* URL: [https://github.com/GeoLabs/bblocks-generic-profiles-v1](https://github.com/GeoLabs/bblocks-generic-profiles-v1)
 * Path: `_sources/implementation-profile/raster-band-math`
 

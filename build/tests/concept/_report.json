@@ -2,7 +2,7 @@
   "title": "Validation report for generic-profiles.concept - Process Concept",
   "bblockName": "Process Concept",
   "bblockId": "generic-profiles.concept",
-  "generated": "2026-10-09T10:07:58.660209+00:00",
+  "generated": "2026-10-30T15:16:53.793153+00:00",
   "result": true,
   "items": [
     {
@@ -10,7 +10,7 @@
         "type": "EXAMPLE",
         "requireFail": false,
         "filename": "build/tests/concept/example_1_1.json",
-        "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/concept/example_1_1.json",
+        "url": "https://geolabs.github.io/bblocks-generic-profiles-v1/build/tests/concept/example_1_1.json",
         "exampleIndex": 1,
         "snippetIndex": 1,
         "language": "application/json"

@@ -7,10 +7,10 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection> a skos:Concept ;
-    dcterms:source [ dcterms:references <https://www.ogc.org/standards/wcps/> ;
-            dcterms:title "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard" ],
-        [ dcterms:references <https://gdal.org/programs/gdalwarp.html> ;
-            dcterms:title "GDAL gdalwarp -- Image mosaicing, reprojection and warping utility" ] ;
+    dcterms:source [ dcterms:references <https://gdal.org/programs/gdalwarp.html> ;
+            dcterms:title "GDAL gdalwarp -- Image mosaicing, reprojection and warping utility" ],
+        [ dcterms:references <https://www.ogc.org/standards/wcps/> ;
+            dcterms:title "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard" ] ;
     skos:definition "Reprojects a raster coverage to another coordinate reference system, resampling pixel values as needed, preserving the coverage's content." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Raster reprojection" ;
@@ -24,12 +24,12 @@
         "gdalwarp",
         "raster",
         "reprojection" ;
-    proc:metadata [ dcterms:title "Generic Profile: Raster reprojection" ;
-            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection> ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ],
-        [ dcterms:title "Process Concept: Raster Coverage Processing" ;
+    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] .
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ],
+        [ dcterms:title "Generic Profile: Raster reprojection" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection> ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/inputs/raster> dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster> ;
     proc:keywords "GeoTIFF",

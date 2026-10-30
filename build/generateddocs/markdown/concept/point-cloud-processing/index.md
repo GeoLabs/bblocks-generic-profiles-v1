@@ -56,7 +56,7 @@ Implementation Profile -> Implementation (instance level).
 #### jsonld
 ```jsonld
 {
-  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/point-cloud-processing/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/concept/point-cloud-processing/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing",
   "type": "Concept",
   "prefLabel": "Point Cloud Processing",
@@ -102,7 +102,7 @@ $schema: https://json-schema.org/draft/2020-12/schema
 description: The Concept "Point Cloud Processing" -- see generic-profiles.concept
   for the general shape every Concept shares.
 allOf:
-- $ref: https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/schema.yaml
+- $ref: https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/concept/schema.yaml
 - type: object
   properties:
     id:
@@ -134,13 +134,18 @@ x-jsonld-prefixes:
   skos: http://www.w3.org/2004/02/skos/core#
   gp: https://geolabs.github.io/bblocks-generic-profiles/def/
   dct: http://purl.org/dc/terms/
+x-bblocks-metadata:
+  itemIdentifier: generic-profiles.concept.point-cloud-processing
+  register: https://geolabs.github.io/bblocks-generic-profiles-v1/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-10-30'
 
 ```
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/point-cloud-processing/schema.json)
-* JSON version: [schema.json](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/point-cloud-processing/schema.yaml)
+* YAML version: [schema.yaml](https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/concept/point-cloud-processing/schema.json)
+* JSON version: [schema.json](https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/concept/point-cloud-processing/schema.yaml)
 
 
 # JSON-LD Context
@@ -178,7 +183,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/point-cloud-processing/context.jsonld)
+[context.jsonld](https://geolabs.github.io/bblocks-generic-profiles-v1/build/annotated/concept/point-cloud-processing/context.jsonld)
 
 ## Sources
 
@@ -190,6 +195,6 @@ You can find the full JSON-LD context here:
 
 The source code for this Building Block can be found in the following repository:
 
-* URL: [https://github.com/GeoLabs/bblocks-generic-profiles](https://github.com/GeoLabs/bblocks-generic-profiles)
+* URL: [https://github.com/GeoLabs/bblocks-generic-profiles-v1](https://github.com/GeoLabs/bblocks-generic-profiles-v1)
 * Path: `_sources/concept/point-cloud-processing`
 
